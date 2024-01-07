@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статистика</title>
+</head>
+<body>
+    <h1>Статистика запросов по часам</h1>
+    <table border="1">
+        <tr>
+            <th>Час</th>
+            <th>Количество запросов</th>
+        </tr>
+      {% for count in data %}
+        <tr>
+            <td>{{ forloop.counter0 }}:00 - {{ forloop.counter }}:00</td>
+            <td>{{ count }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock %}
